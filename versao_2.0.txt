@@ -1,0 +1,11 @@
+## VERSÃO 2.0 ##
+
+Alterações:
+
+-> Criação da Tabela 'contratos' com a seguinte query:
+	* CREATE TABLE contratos (id_contrato int primary key auto_increment, contrato varchar(100), id_contratada int, id_contratante int, data_inicial date, vencimento int, id_tipocobranca int, observacao text, status boolean);
+-> Inclusão do campo 'tipo' na tabela 'operadoras' com a seguinte query:
+	* ALTER TABLE operadoras ADD COLUMN tipo INT(2);
+-> Inclusão do campo 'tipo' na tabela 'pagamentos' com a seguinte query;
+	* ALTER TABLE pagamentos ADD COLUMN tipo INT(2);
+	* UPDATE pagamentos SET tipo = 1 WHERE id_pagamentos > 0;
